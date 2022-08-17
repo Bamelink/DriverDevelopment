@@ -24,5 +24,6 @@ The application can be built by running:
 
 ```shell
 cd driver-dev
-west build -b $BOARD app
+./build.sh
+west flash
 ```
