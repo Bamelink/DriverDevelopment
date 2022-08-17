@@ -1,0 +1,35 @@
+description: |
+  Example definition in devicetree:
+    steppercontroller0: steppercontroller_0 {
+      compatible = "jan,steppercontroller";
+      label = "STEPPERCONTROLLER_0";
+      A-gpios = <&gpioa 15 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+      B-gpios = <&gpioa 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+      C-gpios = <&gpioa 13 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+      D-gpios = <&gpioc 12 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+    };
+
+compatible: "jan,steppercontroller"
+
+include: base.yaml
+
+properties:
+  a-gpios:
+    type: phandle-array
+    required: true
+    description: A Output GPIO.
+
+  b-gpios:
+    type: phandle-array
+    required: true
+    description: B Output GPIO.
+
+  c-gpios:
+    type: phandle-array
+    required: true
+    description: C Output GPIO.
+
+  d-gpios:
+    type: phandle-array
+    required: true
+    description: D Output GPIO.

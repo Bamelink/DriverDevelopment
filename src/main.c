@@ -4,7 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#include "ledcontroller.h"
+//#include "ledcontroller.h"
+#include "steppercontroller.h"
 #include <stdio.h>
 #include <zephyr/zephyr.h>
 
@@ -12,16 +13,10 @@ const struct device *dev;
 
 static void user_entry(void *p1, void *p2, void *p3)
 {
-	printk("user_entry\n");
-	uint8_t decimal = 0;
 	while (1)
 	{
-		if(decimal > 15) {
-			decimal = 0;
-		}
-		ledcontroller_show_binary(dev, decimal);
-		decimal += 1;
-		k_msleep(1000);
+		steppercontroller_step(dev, CLOCKWISE, 200);
+		steppercontroller_step(dev, COUNTER_CLOCKWISE, 200);
 	}
 }
 
@@ -29,7 +24,8 @@ void main(void)
 {
 	printk("Hello World from the app!\n");
 
-	dev = DEVICE_DT_GET(DT_NODELABEL(ledcontroller0));
+	//dev = DEVICE_DT_GET(DT_NODELABEL(ledcontroller0));
+	dev = DEVICE_DT_GET(DT_NODELABEL(steppercontroller0));
 
 	__ASSERT(dev, "Failed to get device binding");
 

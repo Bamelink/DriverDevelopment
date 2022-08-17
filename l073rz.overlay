@@ -8,6 +8,16 @@
 		d-gpios = <&gpioc 12 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
 		status = "okay";
 	};
+
+	steppercontroller0: steppercontroller_0 {
+		compatible = "jan,steppercontroller";
+		label = "STEPPERCONTROLLER_0";
+		a-gpios = <&gpioa 15 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		b-gpios = <&gpioa 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		c-gpios = <&gpioa 13 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		d-gpios = <&gpioc 12 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+		status = "okay";
+	};
 };
 
 &gpioc {

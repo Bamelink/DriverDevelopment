@@ -3,8 +3,8 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  */
-#ifndef __HELLO_WORLD_DRIVER_H__
-#define __HELLO_WORLD_DRIVER_H__
+#ifndef __LEDCONTROLLER_DRIVER_H__
+#define __LEDCONTROLLER_DRIVER_H__
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,16 +12,6 @@ extern "C" {
 
 #include <zephyr/device.h>
 
-/*
- * This 'Hello World' driver has a 'print' syscall that prints the
- * famous 'Hello World!' string.
- *
- * The string is formatted with some internal driver data to
- * demonstrate that drivers are initialized during the boot process.
- *
- * The driver exists to demonstrate (and test) custom drivers that are
- * maintained outside of Zephyr.
- */
 __subsystem struct ledcontroller_api {
 	/* This struct has a member called 'print'. 'print' is function
 	 * pointer to a function that takes 'struct device *dev' as an
@@ -47,4 +37,4 @@ static inline void z_impl_ledcontroller_show_binary(const struct device *dev, ui
 
 #include <syscalls/ledcontroller.h>
 
-#endif /* __HELLO_WORLD_DRIVER_H__ */
+#endif /* __LEDCONTROLLER_DRIVER_H__ */
