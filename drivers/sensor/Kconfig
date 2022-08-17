@@ -1,0 +1,3 @@
+if SENSOR
+rsource "examplesensor/Kconfig"
+endif # SENSOR
